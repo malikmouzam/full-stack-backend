@@ -13,7 +13,7 @@ router.post("/register", async (req, res) => {
     if (!username || !email || !password) {
       return res.status(400).json({ message: "Please fill all the fields" });
     }
-    
+
     const userExists = await User.findOne({ email });
     if (userExists) {
       return res.status(400).json({ message: "User already exists" });
