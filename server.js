@@ -23,6 +23,10 @@ app.use(express.json());
 app.use("/api/users", authRoutes);
 app.use("/api/notes", notesRoutes);
 
+app.get("/", (req, res) => {
+  res.json({ message: "Backend is running" });
+});
+
 connectDB();
 
 app.listen(PORT, () => {
