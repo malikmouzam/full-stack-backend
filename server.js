@@ -10,13 +10,15 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+ app.use(cors({
+       origin: [
+         'http://localhost:5173',  // Vite dev
+         'https://your-frontend-app.vercel.app'  // Replace with your actual Vercel URL (e.g., malikmouzam-frontend.vercel.app)
+       ],
+       credentials: true,  // For cookies/JWT if needed
+       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+       allowedHeaders: ['Content-Type', 'Authorization']
+     }));
 
 app.use(express.json());
 
