@@ -13,7 +13,7 @@ const app = express();
  app.use(cors({
        origin: [
          'http://localhost:5173',  // Vite dev
-         'https://your-frontend-app.vercel.app'  // Replace with your actual Vercel URL (e.g., malikmouzam-frontend.vercel.app)
+         'https://vercel.com/malikmouzams-projects/frontend-full-stack'  // Replace with your actual Vercel URL (e.g., malikmouzam-frontend.vercel.app)
        ],
        credentials: true,  // For cookies/JWT if needed
        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
